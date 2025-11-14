@@ -7,6 +7,7 @@ members = [
     "prefect-docs",
     "prefect-fastmcp-demos",
 ]
+constraints = [{ name = "fastmcp", specifier = "==2.13.0.2" }]
 
 [[package]]
 name = "annotated-types"
@@ -625,11 +626,6 @@ wheels = [
 name = "prefect-docs"
 version = "0.1.0"
 source = { virtual = "servers/prefect_docs" }
-
-[[package]]
-name = "prefect-fastmcp-demos"
-version = "0.1.0"
-source = { virtual = "." }
 dependencies = [
     { name = "fastmcp" },
     { name = "pydantic" },
@@ -637,9 +633,20 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "fastmcp", specifier = "==2.13.0.2" },
-    { name = "pydantic", specifier = "==2.12.4" },
+    { name = "fastmcp" },
+    { name = "pydantic" },
 ]
+
+[[package]]
+name = "prefect-fastmcp-demos"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "fastmcp" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "fastmcp" }]
 
 [[package]]
 name = "py-key-value-aio"
