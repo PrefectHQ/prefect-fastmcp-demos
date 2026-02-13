@@ -9,4 +9,4 @@ create-server NAME:
     
 [doc('Run MCP server in development mode'), no-exit-message]
 dev NAME FILE='main.py':
-    uv run --directory servers/{{NAME}} fastmcp dev {{FILE}}
+    uv run --directory servers/{{NAME}} fastmcp dev inspector {{FILE}}
